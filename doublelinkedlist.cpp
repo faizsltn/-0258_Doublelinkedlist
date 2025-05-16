@@ -71,3 +71,9 @@ public:
     bool listEmpty() {
         return (START == NULL);
     }
+
+    bool deleteNode(int rollNo) {
+        if (START == NULL) {
+            cout << "\nList is empty\n";
+            return false;
+        }
