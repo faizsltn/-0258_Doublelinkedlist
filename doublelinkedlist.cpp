@@ -51,3 +51,19 @@ public:
             START = newNode;
             return;
         }
+        Node *current = START;
+        while (current->next != NULL && current->next->rollNo < rollNo)
+            current = current->next;
+
+        if (current->next != NULL && rollNo == current->next->rollNo)
+        {
+            cout << "\nDuplicate roll numbers not allowed\n";
+            return;
+        }
+
+        newNode->next = current->next;
+        newNode->prev = current;
+        if (current->next != NULL)
+            current->next->prev = newNode;
+        current->next = newNode;
+    }
