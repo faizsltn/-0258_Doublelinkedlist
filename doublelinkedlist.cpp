@@ -167,6 +167,50 @@ public:
     }
 };
 
-int main() {
+int main()
+{
     DoubleLinkedList list;
     int choice;
+
+    do
+    {
+        cout << "\nMenu\n";
+        cout << "1. Add record\n";
+        cout << "2. Delete record\n";
+        cout << "3. View records in ascending order\n";
+        cout << "4. View records in descending order\n";
+        cout << "5. Search for a record\n";
+        cout << "6. Exit\n";
+        cout << "\nEnter your choice: ";
+        cin >> choice;
+
+        switch (choice)
+        {
+        case 1:
+            list.addNode();
+            break;
+        case 2:
+        {
+            int rollNo;
+            cout << "\nEnter the roll number to delete: ";
+            cin >> rollNo;
+            list.deleteNode(rollNo);
+            break;
+        }
+        case 3:
+            list.displayAscending();
+            break;
+        case 4:
+            list.displayDescending();
+            break;
+        case 5:
+            list.searchData();
+            break;
+        case 6:
+            cout << "\nExiting...\n";
+            break;
+        default:
+            cout << "\nInvalid option\n";
+            break;
+        }
+    } while (choice != 6);
