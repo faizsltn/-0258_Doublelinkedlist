@@ -140,8 +140,28 @@ public:
         }
     }
 
-    void searchData() {
-        if (START == NULL) {
+    void searchData()
+    {
+        if (START == NULL)
+        {
             cout << "\nList is empty\n";
             return;
         }
+
+        int rollNo;
+        cout << "\nEnter the roll number to search: ";
+        cin >> rollNo;
+
+        Node* current = START;
+        while (current != NULL && current->rollNo != rollNo)
+            current = current->next;
+
+        if (current == NULL)
+            cout << "\nRecord not found\n";
+        else {
+            cout << "\nRecord found:\n";
+            cout << "Roll number: " << current->rollNo << endl;
+            cout << "Name: " << current->name << endl;
+        }
+    }
+};
