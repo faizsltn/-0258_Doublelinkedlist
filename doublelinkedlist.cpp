@@ -67,3 +67,7 @@ public:
             current->next->prev = newNode;
         current->next = newNode;
     }
+
+    bool listEmpty() {
+        return (START == NULL);
+    }
