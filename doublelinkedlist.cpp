@@ -152,16 +152,21 @@ public:
         cout << "\nEnter the roll number to search: ";
         cin >> rollNo;
 
-        Node* current = START;
+        Node *current = START;
         while (current != NULL && current->rollNo != rollNo)
             current = current->next;
 
         if (current == NULL)
             cout << "\nRecord not found\n";
-        else {
+        else
+        {
             cout << "\nRecord found:\n";
             cout << "Roll number: " << current->rollNo << endl;
             cout << "Name: " << current->name << endl;
         }
     }
 };
+
+int main() {
+    DoubleLinkedList list;
+    int choice;
