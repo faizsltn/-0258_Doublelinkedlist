@@ -81,11 +81,12 @@ public:
             return false;
         }
 
-        Node* current = START;
+        Node *current = START;
         while (current != NULL && current->rollNo != rollNo)
             current = current->next;
 
-        if (current == NULL) {
+        if (current == NULL)
+        {
             cout << "\nRecord not found\n";
             return false;
         }
@@ -103,32 +104,44 @@ public:
         return true;
     }
 
-    void displayAscending() {
-        if (START == NULL) {
+    void displayAscending()
+    {
+        if (START == NULL)
+        {
             cout << "\nList is empty\n";
             return;
         }
 
-        Node* currentNode = START;
+        Node *currentNode = START;
         cout << "\nRecords in ascending order of roll number are:\n";
-        while (currentNode != NULL) {
+        while (currentNode != NULL)
+        {
             cout << currentNode->rollNo << " " << currentNode->name << endl;
             currentNode = currentNode->next;
         }
     }
-    void displayDescending() {
-        if (START == NULL) {
+    void displayDescending()
+    {
+        if (START == NULL)
+        {
             cout << "\nList is empty\n";
             return;
         }
 
-        Node* currentNode = START;
+        Node *currentNode = START;
         while (currentNode->next != NULL)
             currentNode = currentNode->next;
 
         cout << "\nRecords in descending order of roll number are:\n";
-        while (currentNode != NULL) {
+        while (currentNode != NULL)
+        {
             cout << currentNode->rollNo << " " << currentNode->name << endl;
             currentNode = currentNode->prev;
         }
     }
+
+    void searchData() {
+        if (START == NULL) {
+            cout << "\nList is empty\n";
+            return;
+        }
