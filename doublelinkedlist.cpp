@@ -102,3 +102,17 @@ public:
         cout << "\nRecord with roll number " << rollNo << " deleted\n";
         return true;
     }
+
+    void displayAscending() {
+        if (START == NULL) {
+            cout << "\nList is empty\n";
+            return;
+        }
+
+        Node* currentNode = START;
+        cout << "\nRecords in ascending order of roll number are:\n";
+        while (currentNode != NULL) {
+            cout << currentNode->rollNo << " " << currentNode->name << endl;
+            currentNode = currentNode->next;
+        }
+    }
