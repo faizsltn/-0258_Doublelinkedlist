@@ -68,12 +68,37 @@ public:
         current->next = newNode;
     }
 
-    bool listEmpty() {
+    bool listEmpty()
+    {
         return (START == NULL);
     }
 
-    bool deleteNode(int rollNo) {
-        if (START == NULL) {
+    bool deleteNode(int rollNo)
+    {
+        if (START == NULL)
+        {
             cout << "\nList is empty\n";
             return false;
         }
+
+        Node* current = START;
+        while (current != NULL && current->rollNo != rollNo)
+            current = current->next;
+
+        if (current == NULL) {
+            cout << "\nRecord not found\n";
+            return false;
+        }
+
+        if (current->prev != NULL)
+            current->prev->next = current->next;
+        else
+            START = current->next;
+
+        if (current->next != NULL)
+            current->next->prev = current->prev;
+
+        delete current;
+        cout << "\nRecord with roll number " << rollNo << " deleted\n";
+        return true;
+    }
