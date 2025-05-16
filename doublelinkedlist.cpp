@@ -2,10 +2,20 @@
 #include <string>
 using namespace std;
 
-class Node {
+class Node
+{
+public:
+    int rollNo;
+    string name;
+    Node *prev;
+    Node *next;
+};
+
+class DoubleLinkedList {
+    private:
+        Node* START;
+    
     public:
-        int rollNo;
-        string name;
-        Node* prev;
-        Node* next;
-    };
+        DoubleLinkedList() {
+            START = NULL;
+        }
