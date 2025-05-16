@@ -36,3 +36,18 @@ public:
         newNode->name = nm;
         newNode->prev = NULL;
         newNode->next = NULL;
+
+        if (START == NULL || rollNo <= START->rollNo)
+        {
+            if (START != NULL && rollNo == START->rollNo)
+            {
+                cout << "\nDuplicate roll numbers not allowed\n";
+                return;
+            }
+            newNode->next = START;
+            if (START != NULL)
+                START->prev = newNode;
+            newNode->prev = NULL;
+            START = newNode;
+            return;
+        }
