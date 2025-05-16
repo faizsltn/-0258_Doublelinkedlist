@@ -116,3 +116,19 @@ public:
             currentNode = currentNode->next;
         }
     }
+    void displayDescending() {
+        if (START == NULL) {
+            cout << "\nList is empty\n";
+            return;
+        }
+
+        Node* currentNode = START;
+        while (currentNode->next != NULL)
+            currentNode = currentNode->next;
+
+        cout << "\nRecords in descending order of roll number are:\n";
+        while (currentNode != NULL) {
+            cout << currentNode->rollNo << " " << currentNode->name << endl;
+            currentNode = currentNode->prev;
+        }
+    }
